@@ -23,7 +23,7 @@ public class UpdateCustomer {
 			Customer customer=session.get(Customer.class, custId);
 			System.out.println("Got Customer id for change.....");
 			
-			//updating customer 
+			//updating customer property 
 			//case 1
 			customer.setEmail("shobana@h.com");
 			//case 2
