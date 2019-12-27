@@ -1,8 +1,16 @@
 package com.iprimed.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="customer")
+
 public class Customer {
 	
 	//Properties to represent Customer
+	@Id
 	private int id;
 	private String name;
 	private String email;
