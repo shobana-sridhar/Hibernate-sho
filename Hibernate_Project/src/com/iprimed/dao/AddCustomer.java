@@ -17,16 +17,17 @@ public class AddCustomer {
 		try {
 			//create object
 			Customer customer=new Customer("Shobana","Sho@gmail.com",1234567890);
-			
+			System.out.println("Object created");
 			//start transaction
 			session.beginTransaction();
-			
+			System.out.println("transcation begins...");
 			//Save object into the database
 			session.save(customer);
-			
+			System.out.println("Object saved");
 			//commit changes in database
 			
 			session.getTransaction().commit();
+			System.out.println("Commited changes succesfully");
 		}
 		finally {
 			//sessions are closed
