@@ -6,40 +6,35 @@ import org.hibernate.cfg.Configuration;
 
 import com.iprimed.bean.Customer;
 
-public class AddCustomer {
+public class UpdateCustomer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		SessionFactory factory=new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Customer.class).buildSessionFactory();
 		
 		Session session=factory.getCurrentSession();
-		
 		try {
-			//Simple Scenario
-			//create object
+			//Updating a record using id
+			int custId=0;
 			
-			Customer customer=new Customer("sridhar","sri@gmail.com",1999999999);
-			System.out.println("Object created...");
-			//start transaction
 			session.beginTransaction();
-			System.out.println("Transcation begins...");
-			//Save object into the database
-			session.save(customer);
-			System.out.println("Object saved...");
-			//commit changes in database
+			System.out.println("Transaction Begins....");
+			
+			Customer customer=session.get(Customer.class, custId);
+			System.out.println("Got Customer id for change.....");
+			
+			customer.setEmail("shobana@h.com");
+			System.out.println("Updated value is got....");
 			
 			session.getTransaction().commit();
-			System.out.println("Commited changes succesfully...");
-			
-			
-			
-			
+			System.out.println("Commited changes successfully...");
 		}
 		finally {
 			//sessions are closed
 			session.close();
 			factory.close();
 		}
+
 	}
 
 }
