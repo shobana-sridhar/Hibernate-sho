@@ -23,11 +23,22 @@ public class UpdateCustomer {
 			Customer customer=session.get(Customer.class, custId);
 			System.out.println("Got Customer id for change.....");
 			
+			//updating customer 
+			//case 1
 			customer.setEmail("shobana@h.com");
+			//case 2
+			int result=session.createQuery("update Customer set email='yahoo.co.in' where id=1").executeUpdate();
 			System.out.println("Updated value is got....");
+			
+			System.out.println("Result is:"+result);
+			
+			System.out.println("Updated Successfully....");
 			
 			session.getTransaction().commit();
 			System.out.println("Commited changes successfully...");
+			
+			
+			
 		}
 		finally {
 			//sessions are closed
