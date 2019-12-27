@@ -1,6 +1,7 @@
 package com.iprimed.bean;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,6 +12,7 @@ public class Customer {
 	
 	//Properties to represent Customer
 	@Id
+	@GeneratedValue
 	private int id;
 	private String name;
 	private String email;

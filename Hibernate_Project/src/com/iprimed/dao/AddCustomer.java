@@ -15,8 +15,10 @@ public class AddCustomer {
 		Session session=factory.getCurrentSession();
 		
 		try {
+			//Simple Scenario
 			//create object
-			Customer customer=new Customer("Shobana","Sho@gmail.com",1234567890);
+			
+			Customer customer=new Customer("sridhar","sri@gmail.com",1999999999);
 			System.out.println("Object created");
 			//start transaction
 			session.beginTransaction();
@@ -28,6 +30,10 @@ public class AddCustomer {
 			
 			session.getTransaction().commit();
 			System.out.println("Commited changes succesfully");
+			
+			
+			
+			
 		}
 		finally {
 			//sessions are closed
