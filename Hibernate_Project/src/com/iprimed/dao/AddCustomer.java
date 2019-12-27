@@ -16,8 +16,17 @@ public class AddCustomer {
 		
 		try {
 			//create object
+			Customer customer=new Customer("Shobana","Sho@gmail.com",1234567890);
 			
+			//start transaction
+			session.beginTransaction();
 			
+			//Save object into the database
+			session.save(customer);
+			
+			//commit changes in database
+			
+			session.getTransaction().commit();
 		}
 		finally {
 			//sessions are closed
