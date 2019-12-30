@@ -1,9 +1,10 @@
 package com.iprimed.bean;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
-
-public class GrandChild {
+@Entity
+public class GrandChild extends Child {
 
 	@Id
 	@Column(name="grandchild_id")

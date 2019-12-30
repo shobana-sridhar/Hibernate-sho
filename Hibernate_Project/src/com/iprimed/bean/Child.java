@@ -3,7 +3,7 @@ package com.iprimed.bean;
 import javax.persistence.Column;
 import javax.persistence.Id;
 
-public class Child {
+public class Child extends Parent {
 	@Id
 	@Column(name="child_id")
 	private int childId;
