@@ -5,9 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class GrandChild extends Child {
+public class GrandChild  {
 
-	@Id
+	
 	@Column(name="grandchild_id")
 	private int grandChildId;
 	

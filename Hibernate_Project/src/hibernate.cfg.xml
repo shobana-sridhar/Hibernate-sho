@@ -43,7 +43,7 @@
         <mapping class="com.iprimed.bean.EmployeeDetails"/>
         <mapping class="com.iprimed.bean.Parent"/>
         <mapping class="com.iprimed.bean.Child"/>
-        <mapping class="com.iprimed.bean.GrandChild"/>
+       
         
 
     </session-factory>

@@ -1,10 +1,12 @@
 package com.iprimed.bean;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class Child extends Parent {
-	@Id
+	
 	@Column(name="child_id")
 	private int childId;
 	
