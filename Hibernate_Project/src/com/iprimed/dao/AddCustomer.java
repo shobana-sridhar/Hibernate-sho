@@ -18,7 +18,7 @@ public class AddCustomer {
 			//Simple Scenario
 			//create object
 			
-			Customer customer=new Customer("sridhar","sri@gmail.com",1999999999);
+			Customer customer=new Customer("Hemi14","hem@yahoo.com",1847520365);
 			System.out.println("Object created...");
 			//start transaction
 			session.beginTransaction();
