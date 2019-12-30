@@ -20,7 +20,7 @@ public class VariousOperations {
 		//Where,like,order,join,in
 		try {
 			session.beginTransaction();
-			//Where
+			//'Where'
 			List<Customer> customer = session.createQuery("from Customer where email='shobana@h.com'").getResultList();
 			
 			Iterator<Customer>itr=customer.iterator();
@@ -28,7 +28,7 @@ public class VariousOperations {
 				Customer c=itr.next();
 				System.out.println(c.getId()+":"+c.getName()+":"+c.getEmail()+":"+c.getMobile());
 			}
-			//like
+			//'like'
 			List<Customer> customer1 = session.createQuery("from Customer c where"+" c.name like '%5'").getResultList();
 			
 			Iterator<Customer>itr1=customer1.iterator();
@@ -43,6 +43,24 @@ public class VariousOperations {
 			Iterator<Customer>itr2=customer2.iterator();
 			while(itr2.hasNext()) {
 				Customer c=itr2.next();
+				System.out.println(c.getId()+":"+c.getName()+":"+c.getEmail()+":"+c.getMobile());
+			}
+			
+			//'order'
+			List<Customer> customer3 = session.createQuery("from Customer c  order by name").getResultList();
+			
+			Iterator<Customer>itr3=customer3.iterator();
+			while(itr3.hasNext()) {
+				Customer c=itr3.next();
+				System.out.println(c.getId()+":"+c.getName()+":"+c.getEmail()+":"+c.getMobile());
+			}
+			
+			//'in'
+			List<Customer> customer4 = session.createQuery("from Customer c where id in (21,22)").getResultList();
+			
+			Iterator<Customer>itr4=customer4.iterator();
+			while(itr4.hasNext()) {
+				Customer c=itr4.next();
 				System.out.println(c.getId()+":"+c.getName()+":"+c.getEmail()+":"+c.getMobile());
 			}
 		}
