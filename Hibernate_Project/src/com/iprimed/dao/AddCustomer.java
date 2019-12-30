@@ -16,6 +16,7 @@ public class AddCustomer {
 		
 		try {
 			//Simple Scenario
+			
 			//create object
 			
 			Customer customer=new Customer("Hemi14","hem@yahoo.com",1847520365);
