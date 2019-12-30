@@ -23,6 +23,13 @@ public class OneToOneMapping {
 			Department dept=new Department(1001,"CSE");
 			Emp emp=new Emp(22,"Shobana",45500,dept);
 			
+			session.beginTransaction();
+			
+			
+			session.save(emp);
+			
+			session.getTransaction().commit();
+			
 		}
 		finally {
 			//sessions are closed
