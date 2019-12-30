@@ -29,13 +29,7 @@ public class Student {
 	}
 	
 	//Getters and Setters
-	public int getRollNo() {
-		return rollNo;
-	}
-
-	public void setRollNo(int rollNo) {
-		this.rollNo = rollNo;
-	}
+	
 
 	public String getStudentName() {
 		return studentName;
