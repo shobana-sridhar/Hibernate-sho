@@ -20,8 +20,13 @@ public class SingleClassMultipleTables {
 			Student std=new Student();
 			std.setStudentName("Shobana");
 			std.setAge(22);
+			
+			//Begin Transaction
+			session.beginTransaction();
+			
 			//save object
 			session.save(std);
+			
 			//commit object
 			session.getTransaction().commit();
 		}
