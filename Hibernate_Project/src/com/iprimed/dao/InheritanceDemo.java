@@ -5,8 +5,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.iprimed.bean.Child;
-import com.iprimed.bean.Employee;
-import com.iprimed.bean.EmployeeDetails;
 import com.iprimed.bean.GrandChild;
 import com.iprimed.bean.Parent;
 
