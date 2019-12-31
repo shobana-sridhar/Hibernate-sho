@@ -27,7 +27,7 @@ public class StudentCol {
 	
 	
 	public StudentCol(int rollNo, String name, College college) {
-		super();
+		
 		this.rollNo = rollNo;
 		this.name = name;
 		this.college = college;
