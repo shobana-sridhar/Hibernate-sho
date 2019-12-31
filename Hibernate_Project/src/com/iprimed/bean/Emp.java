@@ -20,7 +20,7 @@ public class Emp {
 	
 //Cascade Operations-->ALL(merge,remove,refresh,persist,detach..)
 //FetchType -EAGER -loads both tables data at the time of retrieval /LAZY-loads only particular table properties alone
-@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+@OneToOne(cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 @JoinColumn(name="emp_dept")
 private Department department;
 	

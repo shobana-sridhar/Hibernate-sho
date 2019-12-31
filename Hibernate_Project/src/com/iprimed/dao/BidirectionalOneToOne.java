@@ -1,5 +1,4 @@
 package com.iprimed.dao;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -7,10 +6,10 @@ import org.hibernate.cfg.Configuration;
 import com.iprimed.bean.Child;
 import com.iprimed.bean.Department;
 import com.iprimed.bean.Emp;
+import com.iprimed.bean.Employee;
 import com.iprimed.bean.Parent;
 
-public class OneToOneMapping {
-
+public class BidirectionalOneToOne {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -21,20 +20,31 @@ public class OneToOneMapping {
 		try
 		{
 			//Initially values passed and then mapping done
-//			Department dept=new Department(1001,"CSE");
-//			Emp emp=new Emp(22,"Shobana",45500,dept);
+//			Department dept=new Department();
+//			dept.setDeptId(1002);
+//			dept.setDeptName("ECE");
 //			
+//			
+//			Emp emp=new Emp();
+//			emp.setEmpId(98);
+//			emp.setName("Lakshmi");
+//			emp.setSalary(35000);
+//			emp.setDepartment(dept);
+			
+		
 			session.beginTransaction();
 			
-			//Employee table mapping to Department table
-			Emp emp=session.get(Emp.class,22);
-			System.out.println(emp.getName());
-			System.out.println((emp.getDepartment()));
-			
-			Department dept=emp.getDepartment();
-			System.out.println(dept.getDeptId());
+			//Department table helps in mapping to Employee table
+			Department dept=session.get(Department.class,1002);
+			System.out.println(dept.getEmployee());
 			System.out.println(dept.getDeptName());
+			
+			Emp emp=dept.getEmployee();
+			System.out.println(emp.getName());
+			System.out.println(emp.getSalary());
+			
 			session.save(emp);
+			session.save(dept);
 			
 			session.getTransaction().commit();
 			
@@ -48,4 +58,9 @@ public class OneToOneMapping {
 
 	}
 
+
 }
+
+
+
+
