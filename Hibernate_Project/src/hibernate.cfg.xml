@@ -45,6 +45,8 @@
         <mapping class="com.iprimed.bean.Child"/>
         <mapping class="com.iprimed.bean.Emp"/>
         <mapping class="com.iprimed.bean.Department"/>
+        <mapping class="com.iprimed.bean.College"/>
+        <mapping class="com.iprimed.bean.StudentCol"/>
        
         
 

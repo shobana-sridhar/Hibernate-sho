@@ -13,17 +13,18 @@ public class College {
 	@Column(name="college_name")
 	private String collegeName;
 	
-	@OneToMany(targetEntity=StudentCol.class,mappedBy="college",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+	@OneToMany(targetEntity=StudentCol.class,mappedBy="college",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 	private StudentCol student;
 	
 	public College() {}
 	
-	public College(int collegeId, String collegeName) {
+	
+	public College(int collegeId, String collegeName, StudentCol student) {
 		super();
 		this.collegeId = collegeId;
 		this.collegeName = collegeName;
+		this.student = student;
 	}
-	
 	
 	public int getCollegeId() {
 		return collegeId;
@@ -37,6 +38,14 @@ public class College {
 	}
 	public void setCollegeName(String collegeName) {
 		this.collegeName = collegeName;
+	}
+	
+	public StudentCol getStudent() {
+		return student;
+	}
+
+	public void setStudent(StudentCol student) {
+		this.student = student;
 	}
 	
 

@@ -2,7 +2,6 @@ package com.iprimed.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,12 +20,17 @@ public class StudentCol {
 	@JoinColumn(name="college_id")
 	private College college;
 
+	
+
 	public StudentCol() {}
 	
-	public StudentCol(int rollNo, String name) {
+	
+	
+	public StudentCol(int rollNo, String name, College college) {
 		super();
 		this.rollNo = rollNo;
 		this.name = name;
+		this.college = college;
 	}
 
 	public int getRollNo() {
