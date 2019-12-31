@@ -17,7 +17,7 @@ public class StudentCol {
 	@Column(name="student_name")
 	private String name;
 	
-	@ManyToOne
+	@ManyToOne //Column to have reference to access college details
 	@JoinColumn(name="college_id")
 	private College college;
 

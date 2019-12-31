@@ -1,7 +1,10 @@
 package com.iprimed.bean;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 public class College {
 	@Id
@@ -9,6 +12,9 @@ public class College {
 	private int collegeId;
 	@Column(name="college_name")
 	private String collegeName;
+	
+	@OneToMany(targetEntity=StudentCol.class,mappedBy="college",cascade=CascadeType.ALL,fetch=FetchType.EAGER)
+	private StudentCol student;
 	
 	public College() {}
 	
